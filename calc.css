@@ -1,0 +1,200 @@
+.calc-container {
+  display: flex;
+}
+
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* FORMULARZ */
+.calc-container__form {
+  background-color: white;
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.28);
+  padding: 75px 40px;
+  margin: 40px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-form label {
+  font-weight: 600;
+  color: black;
+  line-height: 1;
+  font-size: 1rem;
+  padding-bottom: 8px;
+}
+
+.calc_form_desc {
+  font-weight: 400;
+  color: black;
+  line-height: 1;
+  font-size: 1rem;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.calc-form input {
+  padding: 8px 16px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #00000038;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.calc-form input::placeholder {
+  color: #00000038;
+}
+
+.calc-form input:focus {
+  color: #f2921d;
+  border: none;
+  border-bottom: 2px solid #ff6f0054;
+  outline: none;
+}
+
+.calc-title {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.calc_interest_box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .calc_interest::after {
+  content: "%";
+  font-size: 40px;
+  color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
+
+.calc_form_btn {
+  display: inline-block;
+  background-color: #f2921d;
+  color: white;
+  border: none;
+  padding: 10px 50px 10px 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: fit-content;
+  transition-duration: 300ms;
+}
+
+.calc_btn_hov:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+.calc-mess {
+  margin-top: 20px;
+  color: rgb(33, 190, 33);
+  display: none;
+}
+
+.valid-mess {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: rgb(218, 15, 15);
+  display: none;
+  max-width: 300px;
+}
+
+.calc-mess-visible {
+  display: block;
+}
+
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* WYLICZENIE */
+.calc-container__data {
+  background-color: #f2921d;
+  padding: 50px;
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calc-title--data {
+  color: white;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ffffff8f;
+  text-align: right;
+}
+
+.calc-result {
+  font-weight: 600;
+}
+
+.calc_data_desc {
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.calc_data_params-box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.calc_data_params {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.calc_data_btn {
+  display: block;
+  background-color: white;
+  color: #f2921d;
+  padding: 10px 50px 10px 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 50px;
+  transition-duration: 300ms;
+}
+
+.calc_data_contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.calc_data_desc-contact {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calc_data_contact-link {
+  font-weight: 300;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  transition-duration: 300ms;
+}
+
+.calc_data_contact-link:hover {
+  font-weight: 500;
+}

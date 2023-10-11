@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator kredytowy</title>
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="calc.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="calc-container">
+      <div class="calc-container__form">
+        <h2 class="calc-title">Kalkulator kredytowy</h2>
+        <form class="calc-form" autocomplete="off">
+          <div id="valid-mess-numb" class="valid-mess">
+            W polach formularza należy wprowadzić wartości liczbowe w formacie
+            "00" lub "0.00". <br />Np: 1000 lub 3.70 lub 24.
+          </div>
+          <label for="calc_value">Wartość kredytu</label>
+          <input
+            required
+            placeholder="100000"
+            type="text"
+            name="value"
+            id="calc_value"
+          />
+
+          <div class="calc_interest_box">
+            <label for="calc_interest">Oprocentowanie</label>
+            <div id="valid-mess-perc" class="valid-mess">
+              Proszę wypełnić pole w formacie "0.00". <br />Np: 6.90 lub 3.70
+            </div>
+            <input
+              required
+              placeholder="6.90"
+              type="text"
+              name="interest"
+              id="calc_interest"
+            />
+          </div>
+
+          <p class="calc_form_desc">Okres kredytowania</p>
+          <div id="valid-mess" class="valid-mess">
+            Proszę uzupełnić tylko jedno pole dotyczące okresu kredytowania.
+          </div>
+          <div id="valid-mess-sec" class="valid-mess">
+            Proszę uzupełnić okres kredytowania.
+          </div>
+          <label for="calc_month">W miesiącach</label>
+          <input placeholder="24" type="text" name="month" id="calc_month" />
+
+          <label for="calc_year">W latach</label>
+          <input placeholder="2" type="text" name="year" id="calc_year" />
+
+          <button class="calc_form_btn calc_btn_hov" type="submit">
+            Oblicz
+          </button>
+          <div id="calc-mess" class="calc-mess">
+            Wyliczenie raty zakończone sukcesem.
+          </div>
+        </form>
+      </div>
+      <div class="calc-container__data">
+        <h2 class="calc-title calc-title--data">
+          Twoja rata: <br /><span class="calc-result">0,00</span> zł
+        </h2>
+        <p class="calc_data_desc">Dodatkowe parametry kredytu</p>
+        <div class="calc_data_params-box">
+          <div class="calc_data_params">
+            <p>Wartość kredytu</p>
+            <p id="credit-value">0 PLN</p>
+          </div>
+          <div class="calc_data_params">
+            <p>Oprocentowanie</p>
+            <p id="credit-perc">0 %</p>
+          </div>
+          <div class="calc_data_params">
+            <p>Okres w miesiącach</p>
+            <p id="credit-period">0</p>
+          </div>
+        </div>
+        <a href="#" class="calc_btn_hov calc_data_btn"
+          >Zapytaj eksperta o szczegóły</a
+        >
+        <div class="calc_data_contact-box">
+          <p class="calc_data_desc calc_data_desc-contact">
+            Lub skontaktuj się
+          </p>
+          <a href="tel:+48123456789" class="calc_data_contact-link"
+            >123 456 789</a
+          >
+          <a href="mailto:kontakt@hossa.pl" class="calc_data_contact-link"
+            >kontakt@hossa.pl</a
+          >
+        </div>
+      </div>
+    </div>
+    <script defer src="calc.js"></script>
+  </body>
+</html>
