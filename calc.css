@@ -170,7 +170,7 @@
   font-weight: 700;
   text-decoration: none;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 70px;
   transition-duration: 300ms;
 }
 
@@ -178,7 +178,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .calc_data_desc-contact {
@@ -197,4 +197,10 @@
 
 .calc_data_contact-link:hover {
   font-weight: 500;
+}
+
+#credit-value,
+#credit-perc,
+#credit-period {
+  text-align: right;
 }
