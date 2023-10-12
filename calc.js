@@ -131,7 +131,7 @@ const handleSubmit = (e) => {
 
     paramValue.textContent = formattedValue + " zł";
     // paramPerc.textContent = creditInterest + " %";
-    paramPerc.textContent = "6.9 %";
+    paramPerc.textContent = creditInterest + " %";
     paramPerdiod.textContent = creditYearPer;
   } else {
     // TUTAJ DODAĆ LOGIKĘ KREDYTU 2%
