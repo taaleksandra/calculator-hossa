@@ -65,19 +65,17 @@
   font-weight: 700;
 }
 
-.calc_interest_box {
+.calc_value_box {
   display: flex;
   flex-direction: column;
 }
 
-/* .calc_interest::after {
-  content: "%";
-  font-size: 40px;
-  color: red;
-  position: absolute;
-  top: 0;
-  right: 0;
-} */
+.calc_value_box::after {
+  content: "zł";
+  font-size: 1rem;
+  color: black;
+  transform: translate(90%, -40px);
+}
 
 .calc_form_btn {
   display: inline-block;
@@ -89,6 +87,7 @@
   font-weight: 700;
   width: fit-content;
   transition-duration: 300ms;
+  margin-top: 30px;
 }
 
 .calc_btn_hov:hover {

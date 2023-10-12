@@ -23,17 +23,19 @@
         <form class="calc-form" autocomplete="off">
           <div id="valid-mess-numb" class="valid-mess">
             W polach formularza należy wprowadzić wartości liczbowe w formacie
-            "00" lub "0.00". <br />Np: 1000 lub 3.70 lub 24.
+            "00". <br />Np: 100000 lub 25.
           </div>
-          <label for="calc_value">Wartość kredytu</label>
-          <input
-            placeholder="100000"
-            type="text"
-            name="value"
-            id="calc_value"
-          />
+          <div class="calc_value_box">
+            <label for="calc_value">Wartość kredytu</label>
+            <input
+              placeholder="np. 100000"
+              type="text"
+              name="value"
+              id="calc_value"
+            />
+          </div>
 
-          <div class="calc_interest_box">
+          <!-- <div class="calc_interest_box">
             <label for="calc_interest">Oprocentowanie</label>
             <div id="valid-mess-perc" class="valid-mess">
               Proszę wypełnić pole w formacie "0.00". <br />Np: 6.90 lub 3.70
@@ -44,20 +46,25 @@
               name="interest"
               id="calc_interest"
             />
-          </div>
+          </div> -->
 
           <p class="calc_form_desc">Okres kredytowania</p>
-          <div id="valid-mess" class="valid-mess">
+          <!-- <div id="valid-mess" class="valid-mess">
             Proszę uzupełnić tylko jedno pole dotyczące okresu kredytowania.
-          </div>
+          </div> -->
           <div id="valid-mess-sec" class="valid-mess">
             Proszę uzupełnić okres kredytowania.
           </div>
-          <label for="calc_month">W miesiącach</label>
-          <input placeholder="24" type="text" name="month" id="calc_month" />
+          <!-- <label for="calc_month">W miesiącach</label>
+          <input placeholder="24" type="text" name="month" id="calc_month" /> -->
 
           <label for="calc_year">W latach</label>
-          <input placeholder="2" type="text" name="year" id="calc_year" />
+          <input placeholder="np. 20" type="text" name="year" id="calc_year" />
+
+          <label class="calc_form_desc">
+            <input type="checkbox" name="credit2" value="2" />
+            Bezpiecznny kredyt 2%
+          </label>
 
           <button class="calc_form_btn calc_btn_hov" type="submit">
             Oblicz
@@ -69,24 +76,24 @@
       </div>
       <div class="calc-container__data">
         <h2 class="calc-title calc-title--data">
-          Twoja rata: <br /><span class="calc-result">0,00</span> zł
+          Twoja rata: <br /><span class="calc-result">0</span> zł
         </h2>
         <p class="calc_data_desc">Dodatkowe parametry kredytu</p>
         <div class="calc_data_params-box">
           <div class="calc_data_params">
             <p>Wartość kredytu</p>
-            <p id="credit-value">0 PLN</p>
+            <p id="credit-value">0 zł</p>
           </div>
           <div class="calc_data_params">
             <p>Oprocentowanie</p>
             <p id="credit-perc">0 %</p>
           </div>
           <div class="calc_data_params">
-            <p>Okres w miesiącach</p>
+            <p>Okres kredytowania w latach</p>
             <p id="credit-period">0</p>
           </div>
         </div>
-        <a href="#" class="calc_btn_hov calc_data_btn"
+        <a href="mailto:kontakt@hossa.pl" class="calc_btn_hov calc_data_btn"
           >Zapytaj eksperta o szczegóły</a
         >
         <div class="calc_data_contact-box">
