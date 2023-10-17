@@ -1,9 +1,7 @@
 const creditForm = document.querySelector(".calc-form");
 
 // powiadomienia formularza
-// const validMessPer = document.querySelector("#valid-mess");
 const validMessPerSec = document.querySelector("#valid-mess-sec");
-const validMessPerc = document.querySelector("#valid-mess-perc");
 const validMessNumb = document.querySelector("#valid-mess-numb");
 const succesInfo = document.querySelector("#calc-mess");
 
@@ -12,6 +10,10 @@ const result = document.querySelector(".calc-result");
 const paramValue = document.querySelector("#credit-value");
 const paramPerc = document.querySelector("#credit-perc");
 const paramPerdiod = document.querySelector("#credit-period");
+
+// wartości stałe w kredycie
+const creditInterest = 7.14;
+const wspW = 7.14;
 
 // funckja wyliczająca ratę
 function PMT(ir, np, pv, fv, type) {
@@ -47,16 +49,12 @@ const handleSubmit = (e) => {
   validMessPerSec.classList.remove("calc-mess-visible");
 
   paramValue.textContent = 0 + " PLN";
-  // paramPerc.textContent = 0 + " %";
+  paramPerc.textContent = 0 + " %";
   paramPerdiod.textContent = 0;
   result.textContent = 0;
 
-  const creditInterest = 7.14;
-
   const form = e.target;
   const creditValue = form.elements.value.value;
-  // const creditInterest = form.elements.interest.value;
-  // const creditMonthPer = form.elements.month.value;
   const creditYearPer = form.elements.year.value;
   const credit2 = form.elements.credit2.checked;
 
@@ -66,9 +64,6 @@ const handleSubmit = (e) => {
   if (Number.isNaN(Number(creditValue)) || creditValue === "") {
     validMessNumb.classList.add("calc-mess-visible");
     return;
-    // } else if (Number.isNaN(Number(creditMonthPer))) {
-    //   validMessNumb.classList.add("calc-mess-visible");
-    //   return;
   } else if (Number.isNaN(Number(creditYearPer))) {
     validMessNumb.classList.add("calc-mess-visible");
     return;
@@ -78,20 +73,6 @@ const handleSubmit = (e) => {
     validMessPerSec.classList.add("calc-mess-visible");
     return;
   }
-
-  // if (creditYearPer !== "" && creditMonthPer !== "") {
-  //   validMessPer.classList.add("calc-mess-visible");
-  //   return;
-  // } else {
-  //   validMessPer.classList.remove("calc-mess-visible");
-  // }
-
-  // if (Number.isNaN(Number(creditInterest)) || creditInterest === "") {
-  //   validMessPerc.classList.add("calc-mess-visible");
-  //   return;
-  // } else {
-  //   validMessPerc.classList.remove("calc-mess-visible");
-  // }
 
   // ----------------------------------------------------------------
   //   WYLICZENIE RATY
@@ -104,10 +85,6 @@ const handleSubmit = (e) => {
     })
     .replace(",", " ");
 
-  // let creditPeriod = Number(creditMonthPer);
-  // if (creditMonthPer === "") {
-  //   creditPeriod = Number(creditYearPer) * 12;
-  // }
   const creditPeriod = Number(creditYearPer) * 12;
 
   if (!credit2) {
@@ -130,12 +107,35 @@ const handleSubmit = (e) => {
     }
 
     paramValue.textContent = formattedValue + " zł";
-    // paramPerc.textContent = creditInterest + " %";
     paramPerc.textContent = creditInterest + " %";
     paramPerdiod.textContent = creditYearPer;
   } else {
-    // TUTAJ DODAĆ LOGIKĘ KREDYTU 2%
-    console.log("DODAJ LOGIKĘ KREDUTY 2%, ABY WYLICZYĆ RATĘ :)))");
+    const ir = creditInterest / 100;
+    const wsp = (wspW - 2) / 100;
+
+    const rataKapit = Number(creditValue) / creditPeriod;
+    const odsetkiNom = (Number(creditValue) * ir) / 12;
+    const doplata = (Number(creditValue) * wsp) / 12;
+    const result2 = rataKapit + (odsetkiNom - doplata);
+
+    if (!Number.isNaN(Number(result2))) {
+      const roundResult = Math.round(result2);
+      const formattedResult = Math.abs(roundResult)
+        .toLocaleString(undefined, {
+          useGrouping: true,
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        })
+        .replace(",", " ");
+
+      result.textContent = formattedResult;
+    } else {
+      result.textContent = 0;
+    }
+
+    paramValue.textContent = formattedValue + " zł";
+    paramPerc.textContent = "2 %";
+    paramPerdiod.textContent = creditYearPer;
   }
 
   succesInfo.classList.add("calc-mess-visible");
