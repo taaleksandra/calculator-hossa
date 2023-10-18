@@ -19,6 +19,9 @@
   <body>
     <div class="calc-container">
       <div class="calc-container__form">
+        <div class="calc-logo-box">
+          <img src="./img/hossa-logo-2023.png" alt="logo" width="150" />
+        </div>
         <h2 class="calc-title">Kalkulator kredytowy</h2>
         <form class="calc-form" autocomplete="off">
           <div id="valid-mess-numb" class="valid-mess">
@@ -26,7 +29,7 @@
             "00". <br />Np: 100000 lub 25.
           </div>
           <div class="calc_value_box">
-            <label for="calc_value">Wartość kredytu</label>
+            <label for="calc_value">Kwota kredytu</label>
             <input
               placeholder="np. 100000"
               type="text"
@@ -45,7 +48,7 @@
 
           <label class="calc_form_desc">
             <input type="checkbox" name="credit2" value="2" />
-            Bezpiecznny kredyt 2%
+            Bezpieczny kredyt 2%
           </label>
 
           <button class="calc_form_btn calc_btn_hov" type="submit">
@@ -63,30 +66,37 @@
         <p class="calc_data_desc">Dodatkowe parametry kredytu</p>
         <div class="calc_data_params-box">
           <div class="calc_data_params">
-            <p>Wartość kredytu</p>
+            <p>Kwota kredytu</p>
             <p id="credit-value">0 zł</p>
           </div>
-          <div class="calc_data_params">
+          <!-- <div class="calc_data_params">
             <p>Oprocentowanie</p>
             <p id="credit-perc">0 %</p>
-          </div>
+          </div> -->
           <div class="calc_data_params">
             <p>Okres kredytowania w latach</p>
             <p id="credit-period">0</p>
           </div>
         </div>
-        <a href="mailto:kontakt@hossa.pl" class="calc_btn_hov calc_data_btn"
+        <a
+          href="mailto:rafal.wozny@hossa-kredyty.pl"
+          class="calc_btn_hov calc_data_btn"
           >Zapytaj eksperta o szczegóły</a
         >
         <div class="calc_data_contact-box">
           <p class="calc_data_desc calc_data_desc-contact">
             Lub skontaktuj się
           </p>
-          <a href="tel:+48123456789" class="calc_data_contact-link"
-            >123 456 789</a
+          <a href="tel:+48504277856" class="calc_data_contact-link"
+            >+48 504 277 856</a
           >
-          <a href="mailto:kontakt@hossa.pl" class="calc_data_contact-link"
-            >kontakt@hossa.pl</a
+          <a href="tel:+48887078098" class="calc_data_contact-link"
+            >+48 887 078 098</a
+          >
+          <a
+            href="mailto:rafal.wozny@hossa-kredyty.pl"
+            class="calc_data_contact-link"
+            >rafal.wozny@hossa-kredyty.pl</a
           >
         </div>
       </div>

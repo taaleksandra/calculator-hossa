@@ -8,7 +8,7 @@ const succesInfo = document.querySelector("#calc-mess");
 // wartości po wyliczeniu
 const result = document.querySelector(".calc-result");
 const paramValue = document.querySelector("#credit-value");
-const paramPerc = document.querySelector("#credit-perc");
+// const paramPerc = document.querySelector("#credit-perc");
 const paramPerdiod = document.querySelector("#credit-period");
 
 // wartości stałe w kredycie
@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
   validMessPerSec.classList.remove("calc-mess-visible");
 
   paramValue.textContent = 0 + " PLN";
-  paramPerc.textContent = 0 + " %";
+  // paramPerc.textContent = 0 + " %";
   paramPerdiod.textContent = 0;
   result.textContent = 0;
 
@@ -107,7 +107,7 @@ const handleSubmit = (e) => {
     }
 
     paramValue.textContent = formattedValue + " zł";
-    paramPerc.textContent = creditInterest + " %";
+    // paramPerc.textContent = creditInterest + " %";
     paramPerdiod.textContent = creditYearPer;
   } else {
     const ir = creditInterest / 100;
@@ -134,7 +134,7 @@ const handleSubmit = (e) => {
     }
 
     paramValue.textContent = formattedValue + " zł";
-    paramPerc.textContent = "2 %";
+    // paramPerc.textContent = "2 %";
     paramPerdiod.textContent = creditYearPer;
   }
 
